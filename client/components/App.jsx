@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Ratings from './Ratings.jsx';
+import Reviews from './Reviews.jsx';
 
 export default class App extends Component {
   constructor() {
@@ -9,7 +11,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h3>Hello, Mars.</h3>
+        <div className="ratings"><Ratings /></div>
+        <div className="reviews"><Reviews /></div>
       </div>
     )
   }
