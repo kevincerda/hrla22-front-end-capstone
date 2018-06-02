@@ -15,6 +15,7 @@ const Review = Sequelize.define('review', {
   review: Sequelize.STRING,
   helpful_count: Sequelize.INTEGER,
   product_id: Sequelize.INTEGER,
+  verified: Sequelize.BOOLEAN,
 });
 
 module.exports.ProductList = ProductList;
