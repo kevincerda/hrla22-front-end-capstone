@@ -13,6 +13,8 @@ db.authenticate()
     console.log('Unable to connect to the database');
   });
 
+db.sync()
+
 module.exports = {
   db
 }
