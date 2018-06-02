@@ -11,6 +11,8 @@ export default class Reviews extends Component {
       <div>
         <h3>Top customer reviews</h3>
         <ReviewEntry />
+        <ReviewEntry />
+        <ReviewEntry />                
       </div>
     )
   }

@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import Ratings from './Ratings.jsx';
 import Reviews from './Reviews.jsx';
+import LeftWrapper from '../styles/LeftWrapper.js';
+import MostRecent from './MostRecent.jsx';
+import RightWrapper from '../styles/RightWrapper';
+
+const theme = {
+  font: '',
+}
 
 export default class App extends Component {
   constructor() {
@@ -11,8 +18,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className="ratings"><Ratings /></div>
-        <div className="reviews"><Reviews /></div>
+        <LeftWrapper>
+          <Ratings />
+          <Reviews />
+        </LeftWrapper>
+        <RightWrapper>
+          <MostRecent/>
+        </RightWrapper>
       </div>
     )
   }
