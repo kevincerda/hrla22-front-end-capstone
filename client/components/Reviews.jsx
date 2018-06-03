@@ -9,7 +9,7 @@ export default class Reviews extends Component {
   render() {
     return (
       <div>
-        <h3>Top customer reviews</h3>
+        <h2>Top customer reviews</h2>
         <ReviewEntry />
         <ReviewEntry />
         <ReviewEntry />                

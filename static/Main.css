@@ -2,7 +2,19 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  color: #111;
   font-size: 13px;
+  line-height: 19px;
+}
+
+h1 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 700;
 }
 
 /* body {
