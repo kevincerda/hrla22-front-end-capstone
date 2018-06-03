@@ -1,22 +1,64 @@
 const Sequelize = require('sequelize');
 const { db } = require('../config');
 
-const ProductList = db.define('product', {
-  id: Sequelize.INTEGER,
-  name: Sequelize.STRING
+const Product = db.define('product', {
+  id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
+},
+{
+  timestamps: false
 });
 
 const Review = db.define('review', {
-  id: Sequelize.INTEGER,
-  customer_name: Sequelize.STRING,
-  rating: Sequelize.INTEGER,
-  title: Sequelize.STRING,
-  date: Sequelize.STRING,
-  review: Sequelize.STRING,
-  helpful_count: Sequelize.INTEGER,
-  product_id: Sequelize.INTEGER,
-  verified: Sequelize.BOOLEAN,
+  id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  customer_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  rating: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  date: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  review: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  helpful_count: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  product_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  verified: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+  }
+},
+{
+  timestamps: false
 });
+
+Product.hasMany(Review);
+Review.belongsTo(Product);
 
 module.exports = {
   ProductList,
