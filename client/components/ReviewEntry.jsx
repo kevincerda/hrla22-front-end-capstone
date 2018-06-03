@@ -8,6 +8,7 @@ import Helpful from '../styles/ReviewEntry/Helpful.js';
 import Links from '../styles/ReviewEntry/Links.js';
 import Seperator from '../styles/ReviewEntry/Seperator.js';
 import Button from '../styles/ReviewEntry/Button.js';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ReviewEntry = props => (
   <Wrapper>
