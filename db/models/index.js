@@ -4,6 +4,7 @@ const { db } = require('../config');
 const Product = db.define('product', {
   id: {
     type: Sequelize.INTEGER,
+    primaryKey: true,
     allowNull: false,
   },
   name: {
@@ -18,6 +19,7 @@ const Product = db.define('product', {
 const Review = db.define('review', {
   id: {
     type: Sequelize.INTEGER,
+    primaryKey: true,
     allowNull: false,
   },
   customer_name: {
@@ -60,7 +62,11 @@ const Review = db.define('review', {
 Product.hasMany(Review);
 Review.belongsTo(Product);
 
+db.sync({ force: true })
+  .then(() => console.log('Successfully created tables'))
+  .catch(err => console.log('Error creating tables', err));
+
 module.exports = {
-  ProductList,
+  Product,
   Review,
 }

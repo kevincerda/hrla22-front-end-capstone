@@ -1,13 +1,16 @@
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
-const db = require('../db/config/')
+const { Router } = require('./router');
+require('../db/models/');
 
 const app = express();
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../static')));
+
+app.use('/api', Router);
 
 const PORT = 3000;
 
