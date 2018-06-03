@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = require('../config');
+const { db } = require('../config');
 
 const ProductList = Sequelize.define('product', {
   id: Sequelize.INTEGER,
@@ -8,7 +8,7 @@ const ProductList = Sequelize.define('product', {
 
 const Review = Sequelize.define('review', {
   id: Sequelize.INTEGER,
-  customer_id: Sequelize.INTEGER,
+  customer_name: Sequelize.STRING,
   rating: Sequelize.INTEGER,
   title: Sequelize.STRING,
   date: Sequelize.STRING,
@@ -18,5 +18,7 @@ const Review = Sequelize.define('review', {
   verified: Sequelize.BOOLEAN,
 });
 
-module.exports.ProductList = ProductList;
-module.exports.Review = Review;
+module.exports = {
+  ProductList: ProductList,
+  Review: Review
+}
