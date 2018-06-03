@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 const { db } = require('../config');
 
-const ProductList = Sequelize.define('product', {
+const ProductList = db.define('product', {
   id: Sequelize.INTEGER,
   name: Sequelize.STRING
 });
 
-const Review = Sequelize.define('review', {
+const Review = db.define('review', {
   id: Sequelize.INTEGER,
   customer_name: Sequelize.STRING,
   rating: Sequelize.INTEGER,
@@ -19,6 +19,6 @@ const Review = Sequelize.define('review', {
 });
 
 module.exports = {
-  ProductList: ProductList,
-  Review: Review
+  ProductList,
+  Review,
 }
