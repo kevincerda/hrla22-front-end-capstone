@@ -10,6 +10,7 @@ import Links from '../styles/ReviewEntry/Links.js';
 import Seperator from '../styles/ReviewEntry/Seperator.js';
 import Button from '../styles/ReviewEntry/Button.js';
 import RatingStars from '../styles/ReviewEntry/RatingStars.js';
+import Link from '../styles/ReviewEntry/Link.js'
 
 const ReviewEntry = props => (
   <Wrapper>
