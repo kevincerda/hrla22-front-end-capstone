@@ -24,10 +24,10 @@ export default class App extends Component {
 
   getProductReviews() {
     axios.get('/api/reviews/' + this.state.id)
-      .then(({ data }) => {
-        this.setState({ reviews: data });
-      })
-      .catch(err => console.log('Error fetching data', err));
+    .then(({ data }) => {
+      this.setState({ reviews: data });
+    })
+    .catch(err => console.log('Error fetching data', err));
   }
 
   genRatingStars(num) {
@@ -44,10 +44,10 @@ export default class App extends Component {
         <LeftWrapper>
           <h2>Top customer reviews</h2>
           {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index} stars={this.genRatingStars(review.rating)}/>))}
-          <Link>See all {this.state.reviews.length} reviews</Link>
+          <Link><h4>See all {this.state.reviews.length} reviews</h4></Link>
         </LeftWrapper>
         <RightWrapper>
-          <MostRecent/>
+          {/* <MostRecent/> */}
         </RightWrapper>
       </div>
     )

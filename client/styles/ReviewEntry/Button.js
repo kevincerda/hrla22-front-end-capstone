@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.button`
+  margin-right: 10px;
   font-size: 11px;
   line-height: 20px;
   text-align: center;

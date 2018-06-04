@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.h4`
+export default styled.text`
   color: #0066c0;
   font-size: 13px;
   font-weight: 900px;

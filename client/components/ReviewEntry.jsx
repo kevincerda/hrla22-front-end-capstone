@@ -23,7 +23,14 @@ const ReviewEntry = props => (
     <Verified>{props.review.verified ? 'Verified Purchase' : ''}</Verified>
     <Body>{props.review.review}</Body>
     <Helpful>{props.review.helpful_count} people found this helpful</Helpful>
-    <Links><Button>Helpful</Button><Seperator/>Comment<Seperator/>Report abuse</Links>
+    <Links>
+      <Button>Helpful</Button>
+      <Button>Not Helpful</Button>
+      <Seperator/>
+      <Link>Comment</Link>
+      <Seperator/>
+      Report abuse
+    </Links>
   </Wrapper>
 )
 
