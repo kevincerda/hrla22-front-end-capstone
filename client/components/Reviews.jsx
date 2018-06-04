@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import Ratings from './Ratings.jsx';
 import ReviewEntry from './ReviewEntry.jsx';
 import LeftWrapper from '../styles/LeftWrapper.js';
@@ -7,9 +7,26 @@ import RightWrapper from '../styles/RightWrapper';
 import MostRecent from './MostRecent.jsx';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: 2,
+      reviews: [],
+    };
+    this.getProductReviews = this.getProductReviews.bind(this);
+  }
+
+  componentDidMount() {
+    this.getProductReviews();
+  }
+
+  getProductReviews() {
+    axios.get('/api/reviews/' + this.state.id)
+      .then(({ data }) => {
+        this.setState({ reviews: data });
+      })
+      .then(() => console.log(this.state.reviews))
+      .catch(err => console.log('Error fetching data', err));
   }
 
   render() {
@@ -17,12 +34,12 @@ export default class App extends Component {
       <div>
         <LeftWrapper>
           <h2>Top customer reviews</h2>
-          <ReviewEntry />
-          <ReviewEntry />
-          <ReviewEntry />   
+          {this.state.reviews.map((review, index) => (
+            <ReviewEntry review={review}/>
+          ))}
         </LeftWrapper>
         <RightWrapper>
-          <MostRecent/>
+          {/* <MostRecent/> */}
         </RightWrapper>
       </div>
     )

@@ -12,6 +12,7 @@
   "author": "Kevin Cerda",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/react-fontawesome": "0.0.20",
     "axios": "^0.18.0",
@@ -19,6 +20,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "lato-font": "^3.0.0",

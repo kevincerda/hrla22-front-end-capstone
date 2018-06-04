@@ -12,14 +12,12 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ReviewEntry = props => (
   <Wrapper>
-    Amazon Customer<br/>
-    <Title>Aliquid quod illo placeat nisi molestias</Title>
-    <Date>May 9, 2018</Date>
-    <Verified>Verified Purchase</Verified>
-    <Body>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum vero maxime est debitis! Quibusdam consectetur necessitatibus laboriosam iure, voluptatum culpa perspiciatis quod maxime nihil doloribus architecto dicta libero vitae? Culpa. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, fuga aliquam atque earum ad dolore cupiditate, vitae est aliquid tempora nobis odit expedita distinctio, delectus natus fugiat blanditiis tenetur! Necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima harum vitae, ex cupiditate quas vero, libero aperiam inventore animi dolor, repellat modi tenetur. Magni blanditiis sed error ab incidunt.<br/>
-    </Body>
-    <Helpful>12 people found this helpful</Helpful>
+    {props.review.customer_name}<br/>
+    <Title>{props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}</Title>
+    <Date>{props.review.date}</Date>
+    <Verified>{props.review.verified ? 'Verified' : ''}</Verified>
+    <Body>{props.review.review}</Body>
+    <Helpful>{props.review.helpful_count} people found this helpful</Helpful>
     <Links><Button>Helpful</Button><Seperator/>Comment<Seperator/>Report abuse</Links>
   </Wrapper>
 )
