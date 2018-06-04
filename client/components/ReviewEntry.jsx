@@ -1,5 +1,6 @@
 import React from 'react';
 import Wrapper from '../styles/ReviewEntry/Wrapper.js';
+import Name from '../styles/ReviewEntry/Name.js';
 import Title from '../styles/ReviewEntry/Title.js';
 import Date from '../styles/ReviewEntry/Date.js';
 import Verified from '../styles/ReviewEntry/Verified.js';
@@ -12,7 +13,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ReviewEntry = props => (
   <Wrapper>
-    {props.review.customer_name}<br/>
+    <Name>{props.review.customer_name ? props.review.customer_name : 'Amazon Customer'}</Name>
     <Title>{props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}</Title>
     <Date>{props.review.date}</Date>
     <Verified>{props.review.verified ? 'Verified' : ''}</Verified>
