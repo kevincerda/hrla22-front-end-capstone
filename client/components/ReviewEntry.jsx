@@ -9,12 +9,21 @@ import Helpful from '../styles/ReviewEntry/Helpful.js';
 import Links from '../styles/ReviewEntry/Links.js';
 import Seperator from '../styles/ReviewEntry/Seperator.js';
 import Button from '../styles/ReviewEntry/Button.js';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import RatingStars from '../styles/ReviewEntry/RatingStars.js';
 
 const ReviewEntry = props => (
   <Wrapper>
     <Name>{props.review.customer_name ? props.review.customer_name : 'Amazon Customer'}</Name>
-    <Title>{props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}</Title>
+    <Title>
+      <RatingStars>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        </RatingStars>
+      {props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}
+    </Title>
     <Date>{props.review.date}</Date>
     <Verified>{props.review.verified ? 'Verified' : ''}</Verified>
     <Body>{props.review.review}</Body>

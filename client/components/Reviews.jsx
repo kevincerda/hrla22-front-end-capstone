@@ -25,17 +25,16 @@ export default class App extends Component {
       .then(({ data }) => {
         this.setState({ reviews: data });
       })
-      .then(() => console.log(this.state.reviews))
       .catch(err => console.log('Error fetching data', err));
   }
-
+  
   render() {
     return (
       <div>
         <LeftWrapper>
           <h2>Top customer reviews</h2>
           {this.state.reviews.map((review, index) => (
-            <ReviewEntry review={review}/>
+            <ReviewEntry review={review} key={index}/>
           ))}
         </LeftWrapper>
         <RightWrapper>
