@@ -16,13 +16,7 @@ const ReviewEntry = props => (
   <Wrapper>
     <Name>{props.review.customer_name ? props.review.customer_name : 'Amazon Customer'}</Name>
     <Title>
-      <RatingStars>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-        </RatingStars>
+      <RatingStars>{props.stars}</RatingStars>
       {props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}
     </Title>
     <Date>{props.review.date}</Date>

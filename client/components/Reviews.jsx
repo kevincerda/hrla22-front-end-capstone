@@ -15,6 +15,7 @@ export default class App extends Component {
       reviews: [],
     };
     this.getProductReviews = this.getProductReviews.bind(this);
+    this.genRatingStars = this.genRatingStars.bind(this);
   }
 
   componentDidMount() {
@@ -29,12 +30,20 @@ export default class App extends Component {
       .catch(err => console.log('Error fetching data', err));
   }
 
+  genRatingStars(num) {
+    const rating = Array(5).fill(<i class="far fa-star"></i>);
+    for (let i = 0; i < num; i++) {
+      rating[i] = <i class="fas fa-star"></i>;
+    }
+    return rating;
+  }
+
   render() {
     return (
       <div>
         <LeftWrapper>
           <h2>Top customer reviews</h2>
-          {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index}/>))}
+          {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index} stars={this.genRatingStars(review.rating)}/>))}
           <Link>See all {this.state.reviews.length} reviews</Link>
         </LeftWrapper>
         <RightWrapper>
