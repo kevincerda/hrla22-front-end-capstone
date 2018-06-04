@@ -25,7 +25,7 @@ const ReviewEntry = props => (
       {props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}
     </Title>
     <Date>{props.review.date}</Date>
-    <Verified>{props.review.verified ? 'Verified' : ''}</Verified>
+    <Verified>{props.review.verified ? 'Verified Purchase' : ''}</Verified>
     <Body>{props.review.review}</Body>
     <Helpful>{props.review.helpful_count} people found this helpful</Helpful>
     <Links><Button>Helpful</Button><Seperator/>Comment<Seperator/>Report abuse</Links>

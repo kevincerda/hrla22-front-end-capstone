@@ -27,18 +27,16 @@ export default class App extends Component {
       })
       .catch(err => console.log('Error fetching data', err));
   }
-  
+
   render() {
     return (
       <div>
         <LeftWrapper>
           <h2>Top customer reviews</h2>
-          {this.state.reviews.map((review, index) => (
-            <ReviewEntry review={review} key={index}/>
-          ))}
+          {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index}/>))}
         </LeftWrapper>
         <RightWrapper>
-          {/* <MostRecent/> */}
+          <MostRecent/>
         </RightWrapper>
       </div>
     )
