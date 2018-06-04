@@ -23,7 +23,8 @@ const ReviewEntry = props => (
     <Verified>{props.review.verified ? 'Verified Purchase' : ''}</Verified>
     <Body>{props.review.review}</Body>
     <Helpful>
-      {props.review.helpful_count > 1 ? props.review.helpful_count + ' people found this helpful' : 'One person found this helpful'}
+      { props.review.helpful_count > 1 ? props.review.helpful_count + ' people found this helpful' :
+        props.review.helpful_count === 1 ? 'One person found this helpful' : '' }
     </Helpful>
     <Links>
       <Button onClick={() => props.handleHelpClick(props.index, 'add')}>Helpful</Button>
