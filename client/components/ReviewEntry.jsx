@@ -22,7 +22,9 @@ const ReviewEntry = props => (
     <Date>{props.review.date}</Date>
     <Verified>{props.review.verified ? 'Verified Purchase' : ''}</Verified>
     <Body>{props.review.review}</Body>
-    <Helpful>{props.review.helpful_count} people found this helpful</Helpful>
+    <Helpful>
+      {props.review.helpful_count > 1 ? props.review.helpful_count + ' people found this helpful' : 'One person found this helpful'}
+    </Helpful>
     <Links>
       <Button>Helpful</Button>
       <Button>Not Helpful</Button>

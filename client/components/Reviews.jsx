@@ -46,9 +46,6 @@ export default class App extends Component {
           {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index} stars={this.genRatingStars(review.rating)}/>))}
           <Link><h4>See all {this.state.reviews.length} reviews</h4></Link>
         </LeftWrapper>
-        <RightWrapper>
-          {/* <MostRecent/> */}
-        </RightWrapper>
       </div>
     )
   }
