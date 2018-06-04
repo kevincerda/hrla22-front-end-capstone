@@ -8,7 +8,7 @@ const ReviewCtrl = {
     if (typeof JSON.parse(req.params.search) === 'number') {
       query.product_id = req.params.search;
     }
-    Review.findAll({ where: query })
+    Review.findAll({ where: query, order: [['helpful_count', 'DESC']] })
       .then(data => res.status(200).send(data))
       .catch(err => res.status(404).send(err));
   }
