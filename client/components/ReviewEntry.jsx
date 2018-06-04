@@ -26,8 +26,8 @@ const ReviewEntry = props => (
       {props.review.helpful_count > 1 ? props.review.helpful_count + ' people found this helpful' : 'One person found this helpful'}
     </Helpful>
     <Links>
-      <Button>Helpful</Button>
-      <Button>Not Helpful</Button>
+      <Button onClick={() => props.handleHelpClick(props.index, 'add')}>Helpful</Button>
+      <Button onClick={() => props.handleHelpClick(props.index, 'sub')}>Not Helpful</Button>
       <Seperator/>
       <Link>Comment</Link>
       <Seperator/>

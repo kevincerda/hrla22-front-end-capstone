@@ -16,6 +16,7 @@ export default class App extends Component {
     };
     this.getProductReviews = this.getProductReviews.bind(this);
     this.genRatingStars = this.genRatingStars.bind(this);
+    this.handleHelpClick = this.handleHelpClick.bind(this);
   }
 
   componentDidMount() {
@@ -38,12 +39,24 @@ export default class App extends Component {
     return rating;
   }
 
+  handleHelpClick(index, val) {
+    val === 'add' ? this.state.reviews[index].helpful_count += 1 : this.state.reviews[index].helpful_count -= 1;
+    this.forceUpdate();
+  }
+
   render() {
     return (
       <div>
         <LeftWrapper>
           <h2>Top customer reviews</h2>
-          {this.state.reviews.map((review, index) => (<ReviewEntry review={review} key={index} stars={this.genRatingStars(review.rating)}/>))}
+          {this.state.reviews.map((review, index) => (
+          <ReviewEntry 
+            review={review}
+            index={index}
+            key={index} 
+            stars={this.genRatingStars(review.rating)}
+            handleHelpClick={this.handleHelpClick}
+          />))}
           <Link><h4>See all {this.state.reviews.length} reviews</h4></Link>
         </LeftWrapper>
       </div>
