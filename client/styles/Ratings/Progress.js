@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  margin: auto;
+  float: left;
+  margin: 0px 10px 0px 10px;
   width: 100px;
   border-radius: 1px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);

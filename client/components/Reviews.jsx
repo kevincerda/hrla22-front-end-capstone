@@ -69,10 +69,9 @@ export default class App extends Component {
               avgRating={this.getAvgRating(this.state.reviews)}
               stars={this.genRatingStars(this.getAvgRating(this.state.reviews))}
               ratingCount={this.countNumOfEachRating(this.state.reviews)}
-              />
+            />
           </RatingsLeftWrapper>
           <RaingsRightWrapper>
-            
           </RaingsRightWrapper>
         </Container>
         <LeftWrapper>
