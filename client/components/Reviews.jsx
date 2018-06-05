@@ -5,7 +5,10 @@ import ReviewEntry from './ReviewEntry.jsx';
 import MostRecent from './MostRecent.jsx';
 import LeftWrapper from '../styles/LeftWrapper.js';
 import RightWrapper from '../styles/RightWrapper';
-import Link from '../styles/ReviewEntry/Link.js'
+import RatingsLeftWrapper from '../styles/Ratings/LeftWrapper.js';
+import RaingsRightWrapper from '../styles/Ratings/RightWrapper.js';
+import Link from '../styles/ReviewEntry/Link.js';
+import Container from '../styles/Ratings/Container.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -59,13 +62,20 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <Container>
+          <RatingsLeftWrapper>
+            <Ratings
+              reviews={this.state.reviews}
+              avgRating={this.getAvgRating(this.state.reviews)}
+              stars={this.genRatingStars(this.getAvgRating(this.state.reviews))}
+              ratingCount={this.countNumOfEachRating(this.state.reviews)}
+              />
+          </RatingsLeftWrapper>
+          <RaingsRightWrapper>
+            
+          </RaingsRightWrapper>
+        </Container>
         <LeftWrapper>
-          <Ratings
-            reviews={this.state.reviews}
-            avgRating={this.getAvgRating(this.state.reviews)}
-            stars={this.genRatingStars(this.getAvgRating(this.state.reviews))}
-            ratingCount={this.countNumOfEachRating(this.state.reviews)}
-            />
           <h2>Top customer reviews</h2>
           {this.state.reviews.map((review, index) => (
           <ReviewEntry 
@@ -77,6 +87,9 @@ export default class App extends Component {
           />))}
           <Link><h4>See all {this.state.reviews.length} reviews ></h4></Link>
         </LeftWrapper>
+        <RightWrapper>
+          <MostRecent/>
+        </RightWrapper>
       </div>
     )
   }
