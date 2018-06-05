@@ -39,6 +39,18 @@ export default class App extends Component {
     return rating;
   }
 
+  getAvgRating(list) {
+    return list.reduce((avg, review) => avg += review.rating, 0) / this.state.reviews.length;
+  }
+
+  countNumOfEachRating(list) {
+    return list.reduce((count, review) => {
+      const rating = review.rating;
+      count[rating] += 1;
+      return count;
+    }, {1: 0, 2: 0, 3: 0, 4: 0, 5: 0});
+  };
+
   handleHelpClick(index, val) {
     val === 'add' ? this.state.reviews[index].helpful_count += 1 : this.state.reviews[index].helpful_count -= 1;
     this.forceUpdate();
@@ -48,6 +60,12 @@ export default class App extends Component {
     return (
       <div>
         <LeftWrapper>
+          <Ratings
+            reviews={this.state.reviews}
+            avgRating={this.getAvgRating(this.state.reviews)}
+            stars={this.genRatingStars(this.getAvgRating(this.state.reviews))}
+            ratingCount={this.countNumOfEachRating(this.state.reviews)}
+            />
           <h2>Top customer reviews</h2>
           {this.state.reviews.map((review, index) => (
           <ReviewEntry 
@@ -57,7 +75,7 @@ export default class App extends Component {
             stars={this.genRatingStars(review.rating)}
             handleHelpClick={this.handleHelpClick}
           />))}
-          <Link><h4>See all {this.state.reviews.length} reviews</h4></Link>
+          <Link><h4>See all {this.state.reviews.length} reviews ></h4></Link>
         </LeftWrapper>
       </div>
     )
