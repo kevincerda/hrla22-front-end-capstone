@@ -11,10 +11,14 @@ import Seperator from '../styles/ReviewEntry/Seperator.js';
 import Button from '../styles/ReviewEntry/Button.js';
 import RatingStars from '../styles/ReviewEntry/RatingStars.js';
 import Link from '../styles/ReviewEntry/Link.js'
+import Image from '../styles/ReviewEntry/ImageIcon';
 
 const ReviewEntry = props => (
   <Wrapper>
-    <Name>{props.review.customer_name ? props.review.customer_name : 'Amazon Customer'}</Name>
+    <Name>
+      <Image src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars/default._CR0,0,1024,1024_SX48_.png"/>
+      {props.review.customer_name ? props.review.customer_name : 'Amazon Customer'}
+    </Name>
     <Title>
       <RatingStars>{props.stars}</RatingStars>
       {props.review.title ? props.review.title : props.review.review.slice(0, 50) + '...'}
