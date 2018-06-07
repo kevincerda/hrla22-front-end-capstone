@@ -52,7 +52,7 @@ export default class ReviewEntry extends Component {
             </FeedbackAlert>
           }
           { this.state.notHelpful === false ? 
-            <Button onClick={() => { this.props.handleHelpClick(this.props.index, 'add'); this.setState({ notHelpful: true, helpful: false })}}>Not Helpful</Button>
+            <Button onClick={() => { this.props.handleHelpClick(this.props.index, 'sub'); this.setState({ notHelpful: true, helpful: false })}}>Not Helpful</Button>
             :
             <FeedbackAlert>
               <FeedbackCheck><i class="fas fa-check"></i></FeedbackCheck>

@@ -10,6 +10,7 @@ import RaingsRightWrapper from '../styles/Ratings/RightWrapper.js';
 import Link from '../styles/ReviewEntry/Link.js';
 import Container from '../styles/Ratings/Container.js';
 import ButtonLG from '../styles/Main/ButtonLG.js'
+import Title from '../styles/ReviewEntry/Title.js'
 
 export default class App extends Component {
   constructor(props) {
@@ -73,8 +74,8 @@ export default class App extends Component {
             />
           </RatingsLeftWrapper>
           <RaingsRightWrapper>
-            Share your thoughts with other customers<br/>
-            <ButtonLG>Write a customer reivew</ButtonLG>
+            {/* <h4>Share your thoughts with other customers</h4> */}
+            <ButtonLG>Write a customer review</ButtonLG>
           </RaingsRightWrapper>
         </Container>
         <LeftWrapper>
