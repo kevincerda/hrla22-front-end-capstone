@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  margin: auto;
-  float: left;
-  margin: none;
-  min-width: 300;
-  min-height: 150px;
-  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 230px;
+  background-color: orange;
 `
