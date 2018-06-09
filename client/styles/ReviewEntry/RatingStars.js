@@ -5,7 +5,5 @@ export default styled.div`
   display: inline;
   font-size: 12px;
   color: #FFBD00;
-  -webkit-text-stroke-width: .3px;
-  -webkit-text-stroke-color: #c09951;
   padding-right: 8px;
 `
