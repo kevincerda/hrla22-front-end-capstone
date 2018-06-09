@@ -48,7 +48,8 @@ export default class Reviews extends Component {
   }
 
   getAvgRating(list) {
-    return list.reduce((avg, review) => avg += review.rating, 0) / this.state.reviews.length;
+    const avg = list.reduce((avg, review) => avg += review.rating, 0) / this.state.reviews.length;
+    return Math.max(Math.round(avg * 10) / 10).toFixed(1);
   }
 
   countNumOfEachRating(list) {
