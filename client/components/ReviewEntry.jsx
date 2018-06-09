@@ -26,19 +26,19 @@ export default class ReviewEntry extends Component {
   
   render() {
     return (
-      <Wrapper>
-        <Name>
+      <Wrapper id="customer-review">
+        <Name id="customer-name">
           <Image src="https://images-na.ssl-images-amazon.com/images/S/amazon-avatars/default._CR0,0,1024,1024_SX48_.png"/>
           {this.props.review.customer_name ? this.props.review.customer_name : 'Amazon Customer'}
         </Name>
         <Title>
-          <RatingStars>{this.props.stars}</RatingStars>
+          <RatingStars id="rating-stars">{this.props.stars}</RatingStars>
           {this.props.review.title ? this.props.review.title : this.props.review.review.slice(0, 50) + '...'}
         </Title>
-        <Date>{this.props.review.date}</Date>
-        <Verified>{this.props.review.verified ? 'Verified Purchase' : ''}</Verified>
-        <Body>{this.props.review.review}</Body>
-        <Helpful>
+        <Date id="review-date">{this.props.review.date}</Date>
+        <Verified id="verified">{this.props.review.verified ? 'Verified Purchase' : ''}</Verified>
+        <Body id="review-body">{this.props.review.review}</Body>
+        <Helpful id="help-count">
           { this.props.review.helpful_count > 1 ? this.props.review.helpful_count + ' people found this helpful' :
             this.props.review.helpful_count === 1 ? 'One person found this helpful' : '' }
         </Helpful>

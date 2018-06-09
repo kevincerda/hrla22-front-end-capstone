@@ -17,7 +17,7 @@ export default class Ratings extends Component {
 
   render() {
     return (
-      <div>
+      <div id="ratings-component">
         <h1>Customer Reviews</h1>
         <Stars>{this.props.stars}</Stars>{this.props.reviews.length}<br/>
         <Link>{this.props.avgRating} out of 5 stars</Link>

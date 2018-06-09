@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+
+// Styled Components
 import Ratings from './Ratings.jsx';
 import ReviewEntry from './ReviewEntry.jsx';
 import MostRecent from './MostRecent.jsx';
@@ -9,10 +12,10 @@ import RatingsLeftWrapper from '../styles/Ratings/LeftWrapper.js';
 import RaingsRightWrapper from '../styles/Ratings/RightWrapper.js';
 import Link from '../styles/ReviewEntry/Link.js';
 import Container from '../styles/Ratings/Container.js';
-import ButtonLG from '../styles/Main/ButtonLG.js'
-import Title from '../styles/ReviewEntry/Title.js'
+import ButtonLG from '../styles/Main/ButtonLG.js';
+import Title from '../styles/ReviewEntry/Title.js';
 
-export default class App extends Component {
+export default class Reviews extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,10 +66,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id="reviews-component">
         <Container>
           <RatingsLeftWrapper>
-            <Ratings
+            <Ratings id="ratings"
               reviews={this.state.reviews}
               avgRating={this.getAvgRating(this.state.reviews)}
               stars={this.genRatingStars(this.getAvgRating(this.state.reviews))}
@@ -74,26 +77,26 @@ export default class App extends Component {
             />
           </RatingsLeftWrapper>
           <RaingsRightWrapper>
-            {/* <h4>Share your thoughts with other customers</h4> */}
             <ButtonLG>Write a customer review</ButtonLG>
           </RaingsRightWrapper>
         </Container>
-        <LeftWrapper>
+        <LeftWrapper id="top-reviews">
           <h2>Top customer reviews</h2>
           {this.state.reviews.map((review, index) => (
-          <ReviewEntry 
-            review={review}
-            index={index}
-            key={index} 
-            stars={this.genRatingStars(review.rating)}
-            handleHelpClick={this.handleHelpClick}
-          />))}
+            <ReviewEntry 
+              review={review}
+              index={index}
+              key={index}
+              stars={this.genRatingStars(review.rating)}
+              handleHelpClick={this.handleHelpClick}
+            />))}
           <Link><h4>See all {this.state.reviews.length} reviews ></h4></Link>
         </LeftWrapper>
-        <RightWrapper>
-          <MostRecent/>
-        </RightWrapper>
       </div>
     )
   }
+}
+
+Reviews.defaultProps = {
+  reviews: []
 }
