@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+import defaultProps from 'prop-types';
 
 // Styled Components
 import Ratings from './Ratings.jsx';
 import ReviewEntry from './ReviewEntry.jsx';
-import MostRecent from './MostRecent.jsx';
 import LeftWrapper from '../styles/LeftWrapper.js';
 import RightWrapper from '../styles/RightWrapper';
 import RatingsLeftWrapper from '../styles/Ratings/LeftWrapper.js';
@@ -25,11 +24,11 @@ export default class Reviews extends Component {
     this.getProductReviews = this.getProductReviews.bind(this);
     this.genRatingStars = this.genRatingStars.bind(this);
     this.handleHelpClick = this.handleHelpClick.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.getProductReviews();
-  }
+  };
 
   getProductReviews() {
     axios.get('/api/reviews/' + this.state.id)
@@ -37,7 +36,7 @@ export default class Reviews extends Component {
       this.setState({ reviews: data });
     })
     .catch(err => console.log('Error fetching data', err));
-  }
+  };
 
   genRatingStars(num) {
     const rating = Array(5).fill(<i class="far fa-star"></i>);
@@ -45,12 +44,12 @@ export default class Reviews extends Component {
       rating[i] = <i class="fas fa-star"></i>;
     }
     return rating;
-  }
+  };
 
   getAvgRating(list) {
     const avg = list.reduce((avg, review) => avg += review.rating, 0) / this.state.reviews.length;
     return Math.max(Math.round(avg * 10) / 10).toFixed(1);
-  }
+  };
 
   countNumOfEachRating(list) {
     return list.reduce((count, review) => {
@@ -63,7 +62,7 @@ export default class Reviews extends Component {
   handleHelpClick(index, val) {
     val === 'add' ? this.state.reviews[index].helpful_count += 1 : this.state.reviews[index].helpful_count -= 1;
     this.forceUpdate();
-  }
+  };
 
   render() {
     return (
