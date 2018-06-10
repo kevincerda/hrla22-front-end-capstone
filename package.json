@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "nodemon server/index.js",
     "build": "webpack -w",
-    "seed": "psql -d reviews -U Kevin < db/seed.sql"
+    "seed": "psql -d reviews -U Kevin < db/seeds/seed.sql"
   },
   "keywords": [],
   "author": "Kevin Cerda",
