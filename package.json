@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server/index.js",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "seed": "psql -d reviews -U Kevin < db/seed.sql"
   },
   "keywords": [],
   "author": "Kevin Cerda",
