@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../static')));
 
 app.use('/api', Router);
 
-const PORT = 3000;
+const PORT = 2106;
 
 app.listen(PORT, (err) => {
   err ? console.log('Error connecting to server: ', err) : console.log('Successfully connected to server on port', PORT);
