@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default styled.div`
+  max-width: 60%;
   font-family: ${props => props.theme.font};
   margin-right: auto;
   max-width: auto;

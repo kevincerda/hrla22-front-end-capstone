@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "nodemon server/index.js",
     "build": "webpack -w",
-    "seed": "psql -d reviews -U Kevin < db/seeds/seed.sql"
+    "seed": "psql -d adb -U Kevin < db/seeds/seed.sql"
   },
   "keywords": [],
   "author": "Kevin Cerda",
@@ -36,8 +36,7 @@
     "react-fontawesome": "^1.6.1",
     "react-test-renderer": "^16.4.0",
     "sequelize": "^4.37.10",
-    "styled-components": "^3.3.0",
-    "webfontloader": "^1.6.28"
+    "styled-components": "^3.3.0"
   },
   "devDependencies": {
     "babel-jest": "^23.0.1",
