@@ -26,38 +26,45 @@ describe('Reviews Component', () => {
 xdescribe('Ratings Component', () => {
 
   it('Should render the Ratings Component', () => {
-    expect(shallow(<Ratings />).find('#ratings-component').exists()).toBe(true);
+    mount(<Ratings />).setProps({ reviews: ['hi'] });
+    expect(mount(<Ratings />).find('#ratings-component').exists()).toBe(true);
   });
 
 });
 
-xdescribe('Review Entries', () => {
+describe('Review Component', () => {
 
-  it('Should render customer reviews', () => {
-    expect(shallow(<ReviewEntry />).find('#customer-review').exists()).toBe(true);
+  it('Should render the Reviews Component', () => {
+    mount(<Reviews />).setProps({ reviews: ['hi'] });
+    expect(mount(<Reviews />).find('#ratings-component').exists()).toBe(true);
   });
 
-  it('Should render the customer\'s name', () => {
+  xit('Should render customer reviews', () => {
+    mount(<ReviewEntry />).setProps({ reviews: ['hi'] });
+    expect(mount(<ReviewEntry />).find('#customer-review').exists()).toBe(true);
+  });
+
+  xit('Should render the customer\'s name', () => {
     expect(shallow(<ReviewEntry />).find('#customer-name').exists()).toBe(true);
   });
 
-  it('Should render rating stars per review', () => {
+  xit('Should render rating stars per review', () => {
     expect(shallow(<ReviewEntry />).find('#rating-stars').exists()).toBe(true);
   });
 
-  it('Should render the review date', () => {
+  xit('Should render the review date', () => {
     expect(shallow(<ReviewEntry />).find('#review-date').exists()).toBe(true);
   });
 
-  it('Should render the review verified status', () => {
+  xit('Should render the review verified status', () => {
     expect(shallow(<ReviewEntry />).find('#verified').exists()).toBe(true);
   });
 
-  it('Should render the review body', () => {
+  xit('Should render the review body', () => {
     expect(shallow(<ReviewEntry />).find('#review-body').exists()).toBe(true);
   });
 
-  it('Should render the review helpful count', () => {
+  xit('Should render the review helpful count', () => {
     expect(shallow(<ReviewEntry />).find('#help-count').exists()).toBe(true);
   });
 

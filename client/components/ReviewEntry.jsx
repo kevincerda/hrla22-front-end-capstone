@@ -32,7 +32,9 @@ export default class ReviewEntry extends Component {
           {this.props.review.customer_name ? this.props.review.customer_name : 'Amazon Customer'}
         </Name>
         <Title>
-          <RatingStars id="rating-stars">{this.props.stars}</RatingStars>
+          <RatingStars id="rating-stars">
+            {this.props.stars}
+          </RatingStars>
           {this.props.review.title ? this.props.review.title : this.props.review.review.slice(0, 50) + '...'}
         </Title>
         <Date id="review-date">{this.props.review.date}</Date>

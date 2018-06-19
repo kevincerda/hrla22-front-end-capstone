@@ -13,6 +13,7 @@ import Link from '../styles/ReviewEntry/Link.js';
 import Container from '../styles/Ratings/Container.js';
 import ButtonLG from '../styles/Main/ButtonLG.js';
 import Title from '../styles/ReviewEntry/Title.js';
+import LineBreak from '../styles/LineBreak.js';
 
 export default class Reviews extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Reviews extends Component {
   };
 
   getProductReviews() {
-    axios.get('/api/reviews/' + this.state.id)
+    axios.get('http://ec2-34-235-139-152.compute-1.amazonaws.com:2106/api/reviews/' + this.state.id)
     .then(({ data }) => {
       this.setState({ reviews: data });
     })
@@ -67,6 +68,7 @@ export default class Reviews extends Component {
   render() {
     return (
       <div id="reviews-component">
+      <LineBreak></LineBreak>
         <Container>
           <RatingsLeftWrapper>
             <Ratings id="ratings"
@@ -100,3 +102,5 @@ export default class Reviews extends Component {
 Reviews.defaultProps = {
   reviews: []
 }
+
+//

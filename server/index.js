@@ -1,12 +1,21 @@
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const helmet = require('helmet');
 const { Router } = require('./router');
 require('../db/models/');
 
+const corOpts = {
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
+
 const app = express();
 
+app.use(cors(corOpts));
 app.use(helmet());
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));

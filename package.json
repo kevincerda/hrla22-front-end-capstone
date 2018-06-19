@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon server/index.js",
-    "build": "webpack -w",
-    "seed": "psql -d adb -U Kevin < db/seeds/seed.sql"
+    "build": "webpack",
+    "seed": "psql -d adb -U amazon < db/seeds/seed.sql"
   },
   "keywords": [],
   "author": "Kevin Cerda",
@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
     "jest": "^23.1.0",
@@ -45,7 +46,7 @@
     "jest-enzyme": "^6.0.1",
     "jest-styled-components": "^5.0.1",
     "regenerator-runtime": "^0.11.1",
-    "webpack": "^4.10.2",
+    "webpack": "^4.12.0",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
   }
